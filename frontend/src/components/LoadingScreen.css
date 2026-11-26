@@ -1,0 +1,59 @@
+.nexa-loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #F4F6FA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+}
+
+.nexa-loader-card {
+    background-color: #FFFFFF;
+    border: 1px solid #E5EAF2;
+    border-radius: 20px;
+    padding: 36px 40px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 360px;
+}
+
+.nexa-progress-track {
+    width: 100%;
+    height: 6px;
+    background-color: #F1F5F9;
+    border-radius: 999px;
+    overflow: hidden;
+    margin-bottom: 14px;
+}
+
+.nexa-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #1E6BFF 0%, #06B6D4 100%);
+    border-radius: 999px;
+    transition: width 0.1s linear;
+}
+
+.nexa-progress-meta {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
+.nexa-progress-text {
+    color: #64748B;
+    font-weight: 500;
+}
+
+.nexa-progress-pct {
+    color: #1E6BFF;
+    font-weight: 700;
+}

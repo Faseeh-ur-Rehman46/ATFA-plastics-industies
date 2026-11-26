@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ATFA Plastic Industry - ERP Management Dashboard</title>
+    <link rel="icon" type="image/png" href="/logo_theme_light.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      body {
+        margin: 0;
+        background-color: #F4F6FA;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+      #preloader {
+        position: fixed;
+        inset: 0;
+        background-color: #F4F6FA;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #0F172A;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        z-index: 99999;
+      }
+      .preloader-bar-wrap {
+        width: 280px;
+        max-width: 85vw;
+        height: 5px;
+        border-radius: 999px;
+        background: #E2E8F0;
+        overflow: hidden;
+        position: relative;
+        margin-top: 18px;
+      }
+      .preloader-bar-fill {
+        height: 100%;
+        border-radius: 999px;
+        background: linear-gradient(90deg, #1E6BFF 0%, #06B6D4 100%);
+        animation: preloaderBarAnim 1.4s ease-in-out infinite;
+      }
+      @keyframes preloaderBarAnim {
+        0% { width: 0%; transform: translateX(0); }
+        50% { width: 65%; transform: translateX(20%); }
+        100% { width: 100%; transform: translateX(0); }
+      }
+      .preloader-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 24px;
+        font-weight: 800;
+        letter-spacing: -0.5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="preloader">
+      <div class="preloader-logo">
+        <img src="/logo_theme_light.png" alt="ATFA Plastic Industry" style="width: 42px; height: 42px; border-radius: 10px; object-fit: cover; border: 1px solid #C7D9FE;" />
+        <span>ATFA <span style="color: #1E6BFF;">PLASTIC</span></span>
+      </div>
+      <div class="preloader-bar-wrap">
+        <div class="preloader-bar-fill"></div>
+      </div>
+    </div>
+
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      window.addEventListener('load', function() {
+        var el = document.getElementById('preloader');
+        if (el) {
+          el.style.opacity = '0';
+          el.style.transition = 'opacity 0.25s ease-out';
+          setTimeout(function() { el.remove(); }, 260);
+        }
+      });
+    </script>
+  </body>
+</html>
